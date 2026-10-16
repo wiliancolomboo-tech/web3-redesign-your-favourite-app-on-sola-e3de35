@@ -1,0 +1,35 @@
+flowchart TD
+    subgraph Client Layer
+        User[Subscriber Wallet]
+        Creator[Creator Admin]
+    end
+
+    subgraph Solana Program Layer [SolPatron Anchor Program]
+        ConfigPDA[("Protocol Config PDA")]
+        CreatorPDA[("Creator Tier PDA")]
+        SubPDA[("Subscription Escrow PDA")]
+        VaultToken[("Tier Escrow Token Account")]
+        CreatorToken[("Creator Settlement Token Account")]
+    end
+
+    subgraph Enterprise Keeper & Pipeline
+        Worker["Autonomous Crank Service (Node.js/TS)"]
+        RPC["Solana RPC Cluster (Helius/Triton)"]
+        ResendAPI["Resend Enterprise Email API"]
+        DiscordAPI["Discord Gateway Webhook"]
+    end
+
+    User -->|1. subscribe(tier_id, duration_epochs)| SubPDA
+    User -->|Deposit SPL-USDC| VaultToken
+    Creator -->|Initialize Tier & Pricing| CreatorPDA
+    
+    Worker -->|2. Poll expired epochs / healthcheck| RPC
+    RPC -->|Scan SubPDA Accounts| Worker
+    Worker -->|3. execute_epoch_settlement()| SubPDA
+    
+    SubPDA -->|Release Earned Yield/Funds| CreatorToken
+    SubPDA -->|Transfer 0.5% Protocol Fee| ConfigPDA
+    
+    Worker -->|4. Emit Webhook Dispatch| ResendAPI
+    Worker -->|5. Grant Subscriber Role| DiscordAPI
+    ResendAPI -->|Send Signed Magic Access Link| User

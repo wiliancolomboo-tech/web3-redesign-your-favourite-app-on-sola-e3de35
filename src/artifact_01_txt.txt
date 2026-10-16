@@ -1,0 +1,11 @@
++--------------------------------------------------------------------------------------------------+
+|                                    BUSINESS IMPACT COMPARISON                                    |
++--------------------------+-------------------------------------+---------------------------------+
+| Metric                   | Legacy Patreon / Substack           | SolPatron on Solana             |
++--------------------------+-------------------------------------+---------------------------------+
+| Platform Take-Rate       | 8.0% - 20.0% + Processing Fees     | 0.5% Protocol Fee               |
+| Payout Latency           | 5 - 14 Business Days                | Instant (< 400ms Sub-slot)      |
+| Chargeback / Fraud Risk  | Borne by creator (2.5% avg loss)   | 0% (Cryptographically Final)   |
+| Audience Portability     | Siloed inside platform DB           | 100% On-chain Sovereign PDAs    |
+| Operational Redundancy   | Centralized Cloud Failure Target    | Distributed Global Solana RPC   |
++--------------------------+-------------------------------------+---------------------------------+
