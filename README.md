@@ -4,7 +4,8 @@
 > **Platform / Category:** Product Design, UX Architecture, Front-End Live Prototype  
 > **Ecosystem:** Solana Mainnet-ready  
 > **Payout Address (Solana SPL / USDC):** `7hn8kUNbVfbjHF7FrYuFs8wdvhHXajte8aC2ud1mWDCH`  
-> **Live Interactive Prototype:** [https://wiliancolomboo-tech.github.io/superteam-jupiter-ux-redesign/](https://wiliancolomboo-tech.github.io/superteam-jupiter-ux-redesign/)
+> **Live Interactive Prototype:** [https://wiliancolomboo-tech.github.io/web3-redesign-your-favourite-app-on-sola-e3de35/](https://wiliancolomboo-tech.github.io/web3-redesign-your-favourite-app-on-sola-e3de35/)
+> **GitHub Repository:** [https://github.com/wiliancolomboo-tech/web3-redesign-your-favourite-app-on-sola-e3de35](https://github.com/wiliancolomboo-tech/web3-redesign-your-favourite-app-on-sola-e3de35)
 
 ---
 
